@@ -28,11 +28,13 @@ describe('Server', () => {
   });
 
   describe('GET /', () => {
+  it('should get a 200 response', (done) => {
   	this.request.get('/', (error, response) => {
 	    if (error) { done(error); }
 	    assert.equal(response.statusCode, 200);
 	    done();
 	  });
+  });
 
 	  it('should have a body with the name of the application', (done) => {
 		  var title = app.locals.title;
